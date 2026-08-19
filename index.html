@@ -1,0 +1,1010 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Для Марлы 🖤</title>
+
+<style>
+:root {
+    --bg: #080609;
+    --paper: #110d12;
+    --text: #eee5ea;
+    --muted: #c0b3bc;
+    --red: #8e2941;
+    --red-light: #b43b57;
+    --gold: #bda77e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background:
+        radial-gradient(circle at 50% 40%, #25121c 0%, transparent 45%),
+        radial-gradient(circle at 20% 80%, #160c13 0%, transparent 35%),
+        var(--bg);
+
+    color: var(--text);
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    opacity: .045;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+.vignette {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse,
+            transparent 35%,
+            rgba(0,0,0,.82) 100%
+        );
+}
+
+.moon {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    right: 7%;
+    top: 8%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #d7ccd1,
+            #766d73 60%,
+            #332d31
+        );
+
+    box-shadow:
+        0 0 60px rgba(210,190,200,.08),
+        0 0 140px rgba(120,30,55,.1);
+
+    opacity: .18;
+}
+
+.mist {
+    position: absolute;
+
+    width: 700px;
+    height: 180px;
+
+    left: -100px;
+    bottom: 5%;
+
+    background: rgba(160,140,150,.065);
+
+    filter: blur(45px);
+
+    border-radius: 50%;
+
+    animation: mist 12s ease-in-out infinite alternate;
+}
+
+@keyframes mist {
+    from {
+        transform: translateX(-50px);
+    }
+
+    to {
+        transform: translateX(180px);
+    }
+}
+
+/* ---------- APP ---------- */
+
+.app {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+/* ---------- BOOK ---------- */
+
+.book {
+    position: relative;
+
+    width: min(760px, 92vw);
+    height: min(700px, 84vh);
+
+    perspective: 1800px;
+}
+
+.page {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: clamp(35px, 7vw, 85px);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,.025),
+            transparent 25%,
+            rgba(0,0,0,.1)
+        ),
+        var(--paper);
+
+    border: 1px solid rgba(189,167,126,.16);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.65),
+        inset 0 0 50px rgba(0,0,0,.35);
+
+    opacity: 0;
+
+    transform:
+        translateX(70px)
+        rotateY(-8deg);
+
+    pointer-events: none;
+
+    transition:
+        opacity .55s ease,
+        transform .65s cubic-bezier(.2,.8,.2,1);
+}
+
+.page::before {
+    content: "";
+
+    position: absolute;
+    inset: 13px;
+
+    border: 1px solid rgba(189,167,126,.08);
+
+    pointer-events: none;
+}
+
+.page.active {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        rotateY(0);
+
+    pointer-events: auto;
+}
+
+.page.previous {
+    opacity: 0;
+
+    transform:
+        translateX(-70px)
+        rotateY(8deg);
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+
+.chapter {
+    color: var(--gold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+
+    opacity: .85;
+}
+
+/* Главный заголовок — Times New Roman Bold */
+
+h1 {
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size:
+        clamp(55px, 10vw, 105px);
+
+    font-weight: 700;
+
+    color: #f0e7ec;
+
+    line-height: .9;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 25px rgba(130,30,55,.18);
+}
+
+h2 {
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size:
+        clamp(32px, 5vw, 54px);
+
+    font-weight: 700;
+
+    color: #eee5ea;
+
+    margin-bottom: 25px;
+}
+
+p {
+    max-width: 590px;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size:
+        clamp(19px, 2.5vw, 24px);
+
+    line-height: 1.55;
+
+    color: #d9cfd5;
+
+    text-shadow:
+        0 1px 10px rgba(0,0,0,.25);
+}
+
+em {
+    color: #eee2e8;
+}
+
+.highlight {
+    color: var(--red-light);
+}
+
+.final {
+    font-size:
+        clamp(24px, 4vw, 38px);
+
+    line-height: 1.4;
+
+    color: #f0e5eb;
+}
+
+.signature {
+    margin-top: 35px;
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+/* ---------- DECOR ---------- */
+
+.symbol {
+    position: absolute;
+
+    top: 30px;
+    right: 40px;
+
+    font-size: 24px;
+
+    color: var(--gold);
+
+    opacity: .45;
+}
+
+.divider {
+    width: 100px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+    margin: 30px 0;
+}
+
+/* ---------- CONTROLS ---------- */
+
+.controls {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    z-index: 20;
+}
+
+button {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(189,167,126,.3);
+
+    background: rgba(10,7,10,.75);
+
+    color: var(--gold);
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+button:hover {
+    background: rgba(115,29,50,.35);
+
+    border-color:
+        rgba(189,167,126,.7);
+
+    transform: scale(1.06);
+}
+
+.counter {
+    min-width: 70px;
+
+    text-align: center;
+
+    color: #b9adb5;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+/* ---------- COVER ---------- */
+
+.cover {
+    text-align: center;
+
+    align-items: center;
+}
+
+.cover p {
+    max-width: 450px;
+
+    color: #c9bdc5;
+}
+
+.cover .divider {
+    margin: 35px auto;
+}
+
+.enter {
+    margin-top: 35px;
+
+    border-radius: 2px;
+
+    width: auto;
+
+    padding: 0 25px;
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 15px;
+    }
+
+    .book {
+        width: 94vw;
+        height: 82vh;
+    }
+
+    .page {
+        padding:
+            45px 32px 65px;
+    }
+
+    .page::before {
+        inset: 9px;
+    }
+
+    .moon {
+        width: 160px;
+        height: 160px;
+
+        right: -30px;
+        top: 5%;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 68px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .controls {
+        bottom: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="moon"></div>
+    <div class="mist"></div>
+    <div class="noise"></div>
+    <div class="vignette"></div>
+</div>
+
+<main class="app">
+
+<div class="book">
+
+<section class="page active cover">
+
+    <div class="symbol">✦</div>
+
+    <div class="chapter">
+        Для Марлы
+    </div>
+
+    <h1>
+        Марла
+    </h1>
+
+    <div class="divider"></div>
+
+    <p>
+        Некоторые вещи просто хочется сказать
+        человеку лично. Но сегодня я решил написать
+        их здесь.
+    </p>
+
+    <button
+        class="enter"
+        onclick="nextPage()">
+        Открыть
+    </button>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">†</div>
+
+    <div class="chapter">
+        01
+    </div>
+
+    <h2>
+        Я долго думал...
+    </h2>
+
+    <p>
+        Я долго думал, что вообще написать тебе сюда,
+        потому что обычное «с днём рождения, счастья,
+        здоровья» как-то вообще не про тебя и не про нас.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+        Поэтому просто скажу как есть.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">✦</div>
+
+    <div class="chapter">
+        02
+    </div>
+
+    <h2>
+        Ты появилась
+    </h2>
+
+    <p>
+        Я очень рад, что однажды ты появилась
+        в моей жизни. Правда.
+    </p>
+
+    <p style="margin-top:25px;">
+        За всё время с тобой было столько всего —
+        смешного, странного, милого, иногда очень
+        сложного, — что я даже не представляю,
+        как можно было бы всё это заменить
+        чем-то другим.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">☾</div>
+
+    <div class="chapter">
+        03
+    </div>
+
+    <h2>
+        Мне нравится быть рядом
+    </h2>
+
+    <p>
+        Ты человек, которого мне хочется видеть рядом.
+        С которым хочется разговаривать обо всём подряд,
+        смеяться с какой-нибудь ерунды, куда-то идти,
+        сидеть рядом и даже иногда просто молчать.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">✧</div>
+
+    <div class="chapter">
+        04
+    </div>
+
+    <h2>
+        Про последние дни
+    </h2>
+
+    <p>
+        Последние дни у нас получились, мягко говоря,
+        не самыми прекрасными.
+    </p>
+
+    <p style="margin-top:25px;">
+        Я знаю, что сделал вещи, которые тебя задели,
+        и понимаю, почему тебе было больно.
+    </p>
+
+    <p style="margin-top:25px;">
+        Я не хочу превращать твоё день рождения
+        в ещё один разговор о проблемах и тем более
+        не хочу этим поздравлением на тебя давить.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">🖤</div>
+
+    <div class="chapter">
+        05
+    </div>
+
+    <h2>
+        Просто знай
+    </h2>
+
+    <p class="final">
+        Ты для меня
+        <span class="highlight">
+            очень важный человек.
+        </span>
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+        Не из-за какого-то идеального образа тебя.
+        Не потому что ты всегда должна быть весёлой,
+        спокойной или удобной.
+    </p>
+
+    <p style="margin-top:25px;">
+        А потому что ты — это ты.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">✦</div>
+
+    <div class="chapter">
+        06
+    </div>
+
+    <h2>
+        Именно ты
+    </h2>
+
+    <p>
+        Мне нравится твой характер.
+        Твоя эмоциональность.
+        Твои странные шутки.
+    </p>
+
+    <p style="margin-top:25px;">
+        Твоя способность одновременно послать меня
+        нахуй и через пять минут спросить, поел ли я.
+    </p>
+
+    <p style="margin-top:25px;">
+        И да, иногда я вообще нихуя не понимаю,
+        что происходит у тебя в голове,
+        но, видимо, именно поэтому мне и интересно.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">☾</div>
+
+    <div class="chapter">
+        07
+    </div>
+
+    <h2>
+        Я хочу для тебя
+    </h2>
+
+    <p>
+        Я хочу, чтобы в этом году у тебя было больше
+        моментов, когда тебе действительно хорошо.
+    </p>
+
+    <p style="margin-top:25px;">
+        Больше людей рядом, с которыми можно быть собой.
+        Больше вещей, которые заставляют тебя смеяться.
+        И меньше всего того, что заставляет тебя
+        сомневаться в себе.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">✧</div>
+
+    <div class="chapter">
+        08
+    </div>
+
+    <h2>
+        Спасибо
+    </h2>
+
+    <p>
+        За разговоры.
+    </p>
+
+    <p>
+        За доверие.
+    </p>
+
+    <p>
+        За моменты, которые я запомнил.
+    </p>
+
+    <p>
+        За то, что ты вообще стала частью моей жизни.
+    </p>
+
+</section>
+
+
+<section class="page">
+
+    <div class="symbol">†</div>
+
+    <div class="chapter">
+        09
+    </div>
+
+    <h2>
+        Я не знаю
+    </h2>
+
+    <p>
+        Я не знаю, каким будет наше «дальше».
+        И не хочу сейчас писать красивую сказку
+        о том, что всё обязательно будет идеально.
+    </p>
+
+    <p style="margin-top:25px;">
+        Но я точно знаю, что сегодняшний день
+        я хочу посвятить не нашим проблемам,
+        а тебе.
+    </p>
+
+</section>
+
+
+<section class="page cover">
+
+    <div class="symbol">🖤</div>
+
+    <div class="chapter">
+        10
+    </div>
+
+    <h1 style="font-size:clamp(45px,8vw,85px);">
+        С днём рождения
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="final">
+        Марла.
+    </p>
+
+    <p style="margin-top:30px;">
+        Я тебя люблю.
+    </p>
+
+    <div class="signature">
+        Максим
+    </div>
+
+</section>
+
+
+<section class="page cover">
+
+    <div class="symbol">✦</div>
+
+    <div class="chapter">
+        Последняя страница
+    </div>
+
+    <p class="final">
+        И надеюсь, что сегодня ты хотя бы немного
+        улыбнёшься, когда дочитаешь это.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+        А если нет — значит, я опять что-то сделал не так.
+    </p>
+
+    <p style="margin-top:25px;">
+        Но я хотя бы старался.
+    </p>
+
+    <div class="signature">
+        ❤️
+    </div>
+
+</section>
+
+</div>
+</main>
+
+
+<div class="controls">
+
+    <button
+        onclick="prevPage()"
+        aria-label="Назад">
+        ‹
+    </button>
+
+    <div class="counter">
+        <span id="current">1</span>
+        /
+        <span id="total">12</span>
+    </div>
+
+    <button
+        onclick="nextPage()"
+        aria-label="Вперёд">
+        ›
+    </button>
+
+</div>
+
+
+<script>
+
+const pages =
+    document.querySelectorAll(".page");
+
+const currentNumber =
+    document.getElementById("current");
+
+const totalNumber =
+    document.getElementById("total");
+
+let currentPage = 0;
+
+totalNumber.textContent =
+    pages.length;
+
+
+function showPage(index) {
+
+    if (index < 0) {
+        index = pages.length - 1;
+    }
+
+    if (index >= pages.length) {
+        index = 0;
+    }
+
+    pages.forEach((page, i) => {
+
+        page.classList.remove(
+            "active",
+            "previous"
+        );
+
+        if (i === index) {
+            page.classList.add("active");
+        }
+
+        if (i < index) {
+            page.classList.add("previous");
+        }
+
+    });
+
+    currentPage = index;
+
+    currentNumber.textContent =
+        index + 1;
+}
+
+
+function nextPage() {
+    showPage(currentPage + 1);
+}
+
+
+function prevPage() {
+    showPage(currentPage - 1);
+}
+
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "ArrowRight" ||
+            event.key === " "
+        ) {
+            nextPage();
+        }
+
+        if (event.key === "ArrowLeft") {
+            prevPage();
+        }
+
+    }
+);
+
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    (event) => {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    (event) => {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        const difference =
+            touchEndX - touchStartX;
+
+        if (Math.abs(difference) < 50) {
+            return;
+        }
+
+        if (difference < 0) {
+            nextPage();
+        } else {
+            prevPage();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```
