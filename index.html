@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Для Марлы 🖤</title>
 
 <style>
@@ -36,12 +35,9 @@ body {
         radial-gradient(circle at 50% 40%, #25121c 0%, transparent 45%),
         radial-gradient(circle at 20% 80%, #160c13 0%, transparent 35%),
         var(--bg);
-
     color: var(--text);
     font-family: "Times New Roman", Times, serif;
 }
-
-/* ---------- BACKGROUND ---------- */
 
 .background {
     position: fixed;
@@ -54,7 +50,6 @@ body {
     position: absolute;
     inset: 0;
     opacity: .045;
-
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
@@ -62,7 +57,6 @@ body {
 .vignette {
     position: absolute;
     inset: 0;
-
     background:
         radial-gradient(
             ellipse,
@@ -73,15 +67,11 @@ body {
 
 .moon {
     position: absolute;
-
     width: 260px;
     height: 260px;
-
     border-radius: 50%;
-
     right: 7%;
     top: 8%;
-
     background:
         radial-gradient(
             circle at 35% 35%,
@@ -89,29 +79,21 @@ body {
             #766d73 60%,
             #332d31
         );
-
     box-shadow:
         0 0 60px rgba(210,190,200,.08),
         0 0 140px rgba(120,30,55,.1);
-
     opacity: .18;
 }
 
 .mist {
     position: absolute;
-
     width: 700px;
     height: 180px;
-
     left: -100px;
     bottom: 5%;
-
     background: rgba(160,140,150,.065);
-
     filter: blur(45px);
-
     border-radius: 50%;
-
     animation: mist 12s ease-in-out infinite alternate;
 }
 
@@ -125,40 +107,29 @@ body {
     }
 }
 
-/* ---------- APP ---------- */
-
 .app {
     position: relative;
-
     width: 100%;
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 30px;
 }
 
-/* ---------- BOOK ---------- */
-
 .book {
     position: relative;
-
     width: min(760px, 92vw);
     height: min(700px, 84vh);
-
     perspective: 1800px;
 }
 
 .page {
     position: absolute;
     inset: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: clamp(35px, 7vw, 85px);
 
     background:
@@ -177,10 +148,7 @@ body {
         inset 0 0 50px rgba(0,0,0,.35);
 
     opacity: 0;
-
-    transform:
-        translateX(70px)
-        rotateY(-8deg);
+    transform: translateX(70px) rotateY(-8deg);
 
     pointer-events: none;
 
@@ -191,105 +159,57 @@ body {
 
 .page::before {
     content: "";
-
     position: absolute;
     inset: 13px;
-
     border: 1px solid rgba(189,167,126,.08);
-
     pointer-events: none;
 }
 
 .page.active {
     opacity: 1;
-
-    transform:
-        translateX(0)
-        rotateY(0);
-
+    transform: translateX(0) rotateY(0);
     pointer-events: auto;
 }
 
 .page.previous {
     opacity: 0;
-
-    transform:
-        translateX(-70px)
-        rotateY(8deg);
+    transform: translateX(-70px) rotateY(8deg);
 }
-
-/* ---------- TYPOGRAPHY ---------- */
 
 .chapter {
     color: var(--gold);
-
     text-transform: uppercase;
-
     letter-spacing: 5px;
-
     font-size: 12px;
-
     margin-bottom: 25px;
-
     opacity: .85;
 }
 
-/* Главный заголовок — Times New Roman Bold */
-
 h1 {
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size:
-        clamp(55px, 10vw, 105px);
-
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(55px, 10vw, 105px);
     font-weight: 700;
-
     color: #f0e7ec;
-
     line-height: .9;
-
     margin-bottom: 35px;
-
-    text-shadow:
-        0 0 25px rgba(130,30,55,.18);
+    text-shadow: 0 0 25px rgba(130,30,55,.18);
 }
 
 h2 {
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size:
-        clamp(32px, 5vw, 54px);
-
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(32px, 5vw, 54px);
     font-weight: 700;
-
     color: #eee5ea;
-
     margin-bottom: 25px;
 }
 
 p {
     max-width: 590px;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size:
-        clamp(19px, 2.5vw, 24px);
-
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(19px, 2.5vw, 24px);
     line-height: 1.55;
-
     color: #d9cfd5;
-
-    text-shadow:
-        0 1px 10px rgba(0,0,0,.25);
+    text-shadow: 0 1px 10px rgba(0,0,0,.25);
 }
 
 em {
@@ -301,43 +221,30 @@ em {
 }
 
 .final {
-    font-size:
-        clamp(24px, 4vw, 38px);
-
+    font-size: clamp(24px, 4vw, 38px);
     line-height: 1.4;
-
     color: #f0e5eb;
 }
 
 .signature {
     margin-top: 35px;
-
     color: var(--gold);
-
     font-size: 20px;
-
     letter-spacing: 3px;
 }
 
-/* ---------- DECOR ---------- */
-
 .symbol {
     position: absolute;
-
     top: 30px;
     right: 40px;
-
     font-size: 24px;
-
     color: var(--gold);
-
     opacity: .45;
 }
 
 .divider {
     width: 100px;
     height: 1px;
-
     background:
         linear-gradient(
             90deg,
@@ -345,47 +252,29 @@ em {
             var(--gold),
             transparent
         );
-
     margin: 30px 0;
 }
 
-/* ---------- CONTROLS ---------- */
-
 .controls {
     position: fixed;
-
     left: 50%;
     bottom: 25px;
-
     transform: translateX(-50%);
-
     display: flex;
     align-items: center;
-
     gap: 18px;
-
     z-index: 20;
 }
 
 button {
     width: 45px;
     height: 45px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(189,167,126,.3);
-
     background: rgba(10,7,10,.75);
-
     color: var(--gold);
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
+    font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-
     cursor: pointer;
 
     transition:
@@ -396,36 +285,25 @@ button {
 
 button:hover {
     background: rgba(115,29,50,.35);
-
-    border-color:
-        rgba(189,167,126,.7);
-
+    border-color: rgba(189,167,126,.7);
     transform: scale(1.06);
 }
 
 .counter {
     min-width: 70px;
-
     text-align: center;
-
     color: #b9adb5;
-
     font-size: 14px;
-
     letter-spacing: 2px;
 }
 
-/* ---------- COVER ---------- */
-
 .cover {
     text-align: center;
-
     align-items: center;
 }
 
 .cover p {
     max-width: 450px;
-
     color: #c9bdc5;
 }
 
@@ -435,24 +313,15 @@ button:hover {
 
 .enter {
     margin-top: 35px;
-
     border-radius: 2px;
-
     width: auto;
-
     padding: 0 25px;
-
     font-size: 15px;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
 }
 
-/* ---------- MOBILE ---------- */
-
 @media (max-width: 600px) {
-
     .app {
         padding: 15px;
     }
@@ -463,8 +332,7 @@ button:hover {
     }
 
     .page {
-        padding:
-            45px 32px 65px;
+        padding: 45px 32px 65px;
     }
 
     .page::before {
@@ -474,7 +342,6 @@ button:hover {
     .moon {
         width: 160px;
         height: 160px;
-
         right: -30px;
         top: 5%;
     }
@@ -520,9 +387,7 @@ button:hover {
         Для Марлы
     </div>
 
-    <h1>
-        Марла
-    </h1>
+    <h1>Марла</h1>
 
     <div class="divider"></div>
 
@@ -532,9 +397,7 @@ button:hover {
         их здесь.
     </p>
 
-    <button
-        class="enter"
-        onclick="nextPage()">
+    <button class="enter" onclick="nextPage()">
         Открыть
     </button>
 
@@ -549,13 +412,11 @@ button:hover {
         01
     </div>
 
-    <h2>
-        Я долго думал...
-    </h2>
+    <h2>Я долго думал...</h2>
 
     <p>
-        Я долго думал, что вообще написать тебе сюда,
-        потому что обычное «с днём рождения, счастья,
+        Я долго думал , что вообще написать тебе сюда ,
+        потому что обычное «с днём рождения , счастья ,
         здоровья» как-то вообще не про тебя и не про нас.
     </p>
 
@@ -576,19 +437,17 @@ button:hover {
         02
     </div>
 
-    <h2>
-        Ты появилась
-    </h2>
+    <h2>Ты появилась</h2>
 
     <p>
-        Я очень рад, что однажды ты появилась
+        Я очень рад , что однажды ты появилась
         в моей жизни. Правда.
     </p>
 
     <p style="margin-top:25px;">
-        За всё время с тобой было столько всего —
-        смешного, странного, милого, иногда очень
-        сложного, — что я даже не представляю,
+        За всё время с тобой было столько всего -
+        смешного , странного , милого , иногда очень
+        сложного , - что я даже не представляю ,
         как можно было бы всё это заменить
         чем-то другим.
     </p>
@@ -604,14 +463,12 @@ button:hover {
         03
     </div>
 
-    <h2>
-        Мне нравится быть рядом
-    </h2>
+    <h2>Мне нравится быть рядом</h2>
 
     <p>
-        Ты человек, которого мне хочется видеть рядом.
-        С которым хочется разговаривать обо всём подряд,
-        смеяться с какой-нибудь ерунды, куда-то идти,
+        Ты человек , которого мне хочется видеть рядом.
+        С которым хочется разговаривать обо всём подряд ,
+        смеяться с какой-нибудь ерунды , куда-то идти ,
         сидеть рядом и даже иногда просто молчать.
     </p>
 
@@ -626,18 +483,16 @@ button:hover {
         04
     </div>
 
-    <h2>
-        Про последние дни
-    </h2>
+    <h2>Про последние дни</h2>
 
     <p>
-        Последние дни у нас получились, мягко говоря,
+        Последние дни у нас получились , мягко говоря ,
         не самыми прекрасными.
     </p>
 
     <p style="margin-top:25px;">
-        Я знаю, что сделал вещи, которые тебя задели,
-        и понимаю, почему тебе было больно.
+        Я знаю , что сделал вещи , которые тебя задели ,
+        и понимаю , почему тебе было больно.
     </p>
 
     <p style="margin-top:25px;">
@@ -657,9 +512,7 @@ button:hover {
         05
     </div>
 
-    <h2>
-        Просто знай
-    </h2>
+    <h2>Просто знай</h2>
 
     <p class="final">
         Ты для меня
@@ -672,12 +525,12 @@ button:hover {
 
     <p>
         Не из-за какого-то идеального образа тебя.
-        Не потому что ты всегда должна быть весёлой,
+        Не потому что ты всегда должна быть весёлой ,
         спокойной или удобной.
     </p>
 
     <p style="margin-top:25px;">
-        А потому что ты — это ты.
+        А потому что ты - это ты.
     </p>
 
 </section>
@@ -691,9 +544,7 @@ button:hover {
         06
     </div>
 
-    <h2>
-        Именно ты
-    </h2>
+    <h2>Именно ты</h2>
 
     <p>
         Мне нравится твой характер.
@@ -703,13 +554,13 @@ button:hover {
 
     <p style="margin-top:25px;">
         Твоя способность одновременно послать меня
-        нахуй и через пять минут спросить, поел ли я.
+        нахуй и через пять минут спросить , поел ли я.
     </p>
 
     <p style="margin-top:25px;">
-        И да, иногда я вообще нихуя не понимаю,
-        что происходит у тебя в голове,
-        но, видимо, именно поэтому мне и интересно.
+        И да , иногда я вообще нихуя не понимаю ,
+        что происходит у тебя в голове ,
+        но , видимо , именно поэтому мне и интересно.
     </p>
 
 </section>
@@ -723,19 +574,17 @@ button:hover {
         07
     </div>
 
-    <h2>
-        Я хочу для тебя
-    </h2>
+    <h2>Я хочу для тебя</h2>
 
     <p>
-        Я хочу, чтобы в этом году у тебя было больше
-        моментов, когда тебе действительно хорошо.
+        Я хочу , чтобы в этом году у тебя было больше
+        моментов , когда тебе действительно хорошо.
     </p>
 
     <p style="margin-top:25px;">
-        Больше людей рядом, с которыми можно быть собой.
-        Больше вещей, которые заставляют тебя смеяться.
-        И меньше всего того, что заставляет тебя
+        Больше людей рядом , с которыми можно быть собой.
+        Больше вещей , которые заставляют тебя смеяться.
+        И меньше всего того , что заставляет тебя
         сомневаться в себе.
     </p>
 
@@ -750,9 +599,7 @@ button:hover {
         08
     </div>
 
-    <h2>
-        Спасибо
-    </h2>
+    <h2>Спасибо</h2>
 
     <p>
         За разговоры.
@@ -763,11 +610,11 @@ button:hover {
     </p>
 
     <p>
-        За моменты, которые я запомнил.
+        За моменты , которые я запомнил.
     </p>
 
     <p>
-        За то, что ты вообще стала частью моей жизни.
+        За то , что ты вообще стала частью моей жизни.
     </p>
 
 </section>
@@ -781,19 +628,17 @@ button:hover {
         09
     </div>
 
-    <h2>
-        Я не знаю
-    </h2>
+    <h2>Я не знаю</h2>
 
     <p>
-        Я не знаю, каким будет наше «дальше».
+        Я не знаю , каким будет наше «дальше».
         И не хочу сейчас писать красивую сказку
-        о том, что всё обязательно будет идеально.
+        о том , что всё обязательно будет идеально.
     </p>
 
     <p style="margin-top:25px;">
-        Но я точно знаю, что сегодняшний день
-        я хочу посвятить не нашим проблемам,
+        Но я точно знаю , что сегодняшний день
+        я хочу посвятить не нашим проблемам ,
         а тебе.
     </p>
 
@@ -838,14 +683,14 @@ button:hover {
     </div>
 
     <p class="final">
-        И надеюсь, что сегодня ты хотя бы немного
-        улыбнёшься, когда дочитаешь это.
+        И надеюсь , что сегодня ты хотя бы немного
+        улыбнёшься , когда дочитаешь это.
     </p>
 
     <div class="divider"></div>
 
     <p>
-        А если нет — значит, я опять что-то сделал не так.
+        А если нет - значит , я опять что-то сделал не так.
     </p>
 
     <p style="margin-top:25px;">
@@ -864,9 +709,7 @@ button:hover {
 
 <div class="controls">
 
-    <button
-        onclick="prevPage()"
-        aria-label="Назад">
+    <button onclick="prevPage()" aria-label="Назад">
         ‹
     </button>
 
@@ -876,9 +719,7 @@ button:hover {
         <span id="total">12</span>
     </div>
 
-    <button
-        onclick="nextPage()"
-        aria-label="Вперёд">
+    <button onclick="nextPage()" aria-label="Вперёд">
         ›
     </button>
 
@@ -887,8 +728,7 @@ button:hover {
 
 <script>
 
-const pages =
-    document.querySelectorAll(".page");
+const pages = document.querySelectorAll(".page");
 
 const currentNumber =
     document.getElementById("current");
@@ -898,8 +738,7 @@ const totalNumber =
 
 let currentPage = 0;
 
-totalNumber.textContent =
-    pages.length;
+totalNumber.textContent = pages.length;
 
 
 function showPage(index) {
@@ -972,10 +811,8 @@ let touchEndX = 0;
 document.addEventListener(
     "touchstart",
     (event) => {
-
         touchStartX =
             event.changedTouches[0].screenX;
-
     }
 );
 
